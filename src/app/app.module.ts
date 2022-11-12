@@ -7,6 +7,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { PeliculasComponent } from './pages/peliculas/peliculas.component';
 import { PeliscardsComponent } from './components/peliscards/peliscards.component';
 import { MainComponent } from './components/main/main.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { MainComponent } from './components/main/main.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,45 @@
-<div class="card" style="width: 18rem;">
+<div class="row justify-content-center aling-items-center" style="margin: 0 !important; padding: 10px;">
+  <div class="card p-4 m-4" style="width: 18rem;" *ngFor="let pelis of Peliculas.data; let indice = index">
     <img class="card-img-top" src="..." alt="Card image cap">
     <div class="card-body">
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <h5 class="card-title">{{pelis.titulo}}</h5>
+      <p class="card-text">{{pelis.descripcion}}</p>
+      <span class="card-text"> {{pelis.genero}}</span>
+      <p>{{pelis.id}}</p>
+      <br>
+     
+       <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" (click)="MoviestoCategory(pelis.id)" data-bs-toggle="modal" data-bs-target="#index">
+  Ver Detalles
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="index" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">
+          {{DetaPeliculas.data[0].titulo}}
+          <p>{{DetaPeliculas.data[0].descripcion}}</p>
+        </h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        {{DetaPeliculas.data[0].desc_completa}}
+      </div>
+      <div class="modal-footer">
+        <p>{{DetaPeliculas.data[0].fecha_estreno}}</p>
+        <br>
+        <p>{{DetaPeliculas.data[0].duracion}}</p>
+        <br>
+        <span>{{DetaPeliculas.data[0].reparto}}</span>
+      </div>
     </div>
+  </div>
 </div>
+
+</div>
+</div>
+
+
+  
