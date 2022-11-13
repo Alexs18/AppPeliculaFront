@@ -18,6 +18,13 @@ export class PeliculasService {
     let {URI_API} = environment;
     return this.http.get(`${URI_API}/DetallePeliculas/${id}`)
   }
-
+  DeleteMovies(id:any){
+    let {URI_API} = environment;
+    return this.http.delete(`${URI_API}/Peliculas/${id}`)
+  }
+  AgregarPeliculas(pelicula:any):any{
+    let {URI_API} = environment;
+    return this.http.post(`${URI_API}/Peliculas`, pelicula)
+  }
 
 }

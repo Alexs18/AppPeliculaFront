@@ -1,0 +1,53 @@
+<app-navbar></app-navbar>
+<h3>Panel de administración</h3>
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Agregar Pelicula</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Nueva Pelicula</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Titulo</label>
+            <input type="text" class="form-control" id="recipient-name" [(ngModel)]="titulo"  [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Genero</label>
+            <input type="text" class="form-control" id="recipient-name" [(ngModel)]="genero"  [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">Descripcion</label>
+            <textarea class="form-control" id="message-text" [(ngModel)]="descripcion"  [ngModelOptions]="{standalone: true}"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="AgregarPelicula()">Agregar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Titulo</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Genero</th>
+        <th scope="col">Opciones</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let pelis of Peliculas.data">
+      <tr>
+        <td>{{pelis.titulo}}</td>
+        <td>{{pelis.descripcion}}</td>
+        <td>{{pelis.genero}}</td>
+        <td> <button class="btn btn-danger" (click)="boorarpelicula(pelis.id)">Borrar</button> </td>
+      </tr>
+    </tbody>
+  </table>

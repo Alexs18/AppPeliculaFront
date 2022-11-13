@@ -10,6 +10,7 @@ export class PeliculasComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    alert('Bienvenido al rincon de las peliculas')
   }
 
 }

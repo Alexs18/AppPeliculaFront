@@ -9,6 +9,10 @@ import { PeliscardsComponent } from './components/peliscards/peliscards.componen
 import { MainComponent } from './components/main/main.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { PaneladminComponent } from './pages/paneladmin/paneladmin.component';
+
 
 @NgModule({
   declarations: [
@@ -16,12 +20,15 @@ import { CommonModule } from '@angular/common';
     LoginComponent,
     PeliculasComponent,
     PeliscardsComponent,
-    MainComponent
+    MainComponent,
+    NavbarComponent,
+    PaneladminComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
